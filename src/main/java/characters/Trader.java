@@ -1,2 +1,8 @@
-package characters;public class Trader {
+package characters;
+
+public class Trader extends AbstractCharacter {
+
+    Trader() {
+        super("Trader");
+    }
 }

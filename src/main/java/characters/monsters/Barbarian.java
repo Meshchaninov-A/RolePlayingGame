@@ -1,4 +1,8 @@
-package characters;
+package characters.monsters;
 
-public class Barbarian {
+public class Barbarian extends AbstractMonster {
+
+    protected Barbarian(int level) {
+        super(MonsterType.BARBARIAN, level);
+    }
 }

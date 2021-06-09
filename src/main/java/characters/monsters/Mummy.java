@@ -1,4 +1,13 @@
-package characters;
+package characters.monsters;
 
-public class Mummy extends Monster {
+/**
+ * Мумия
+ *
+ * @author Meshchaninov Aleksey
+ */
+public class Mummy extends AbstractMonster {
+
+    protected Mummy(int level) {
+        super(MonsterType.MUMMY, level);
+    }
 }

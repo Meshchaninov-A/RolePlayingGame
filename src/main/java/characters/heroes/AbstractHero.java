@@ -2,9 +2,23 @@ package characters.heroes;
 
 import characters.AbstractCharacter;
 
-public abstract class Hero extends AbstractCharacter {
+/**
+ * Абстрактный класс для всех героев
+ * Для сбалансированности, произведение стартовых значений свойств героев strength * agility * health должно быть равно 15000000
+ *
+ * @author Meshchaninov Aleksey
+ */
+public abstract class AbstractHero extends AbstractCharacter {
 
-    protected Hero(String name, long strength, long agility, long health, long gold, int level) {
-        super(name, strength, agility, health, gold, level);
+    protected AbstractHero(HeroType hero) {
+        super(hero.getName(), hero.getStrength(), hero.getAgility(), hero.getHealth(), 0, 3);
+    }
+
+    public void addExperience(long exp) {
+        this.experience += exp;
+        long experienceForLevelUp = countLevelExp(this.level + 1);
+        if (this.experience > experienceForLevelUp) {
+            this.level++;
+        }
     }
 }

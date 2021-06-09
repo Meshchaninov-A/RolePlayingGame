@@ -2,9 +2,15 @@ package characters.monsters;
 
 import characters.AbstractCharacter;
 
-public class Monster extends AbstractCharacter {
+/**
+ * Абстрактный класс для всех монстров в игровом мире
+ *
+ * @author Meshchaninov Aleksey
+ */
+public class AbstractMonster extends AbstractCharacter {
 
-    protected Monster(String name, long strength, long agility, long health, long gold, int level) {
-        super(name, strength, agility, health, gold, level);
+    protected AbstractMonster(MonsterType monster, int level) {
+        super(monster.getName(), monster.getStrength(), monster.getAgility(), monster.getHealth(), monster.getGold(), level);
     }
+
 }
